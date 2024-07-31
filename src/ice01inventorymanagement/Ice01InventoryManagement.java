@@ -45,16 +45,20 @@ public class Ice01InventoryManagement
                            "5. Exit program");
             System.out.print("Choose an option: ");
             option = scan.nextInt();
-            switch (option) 
+            switch(option) 
             {
                 case 1:
                     displayItemList(itemList);
+                    break;
                 case 2:
                     addItemToList(itemList);
+                    break;
                 case 3:
                     removeItemFromList(itemList);
+                    break;
                 case 4:
                     displayCategory(itemList, Category.MEAT);
+                    break;
                 case 5:
                     System.out.println("Exiting... ");
                 
@@ -122,9 +126,50 @@ public class Ice01InventoryManagement
     public static void removeItemFromList(ArrayList<Item> itemList)
     {
         Scanner scan = new Scanner(System.in);
+        String name;
+        System.out.print("Enter item name to remove: ");
+        name = scan.nextLine();
+        itemList.remove(name);
+        System.out.println("Item removed successfully!");
     }
     
     public static void displayCategory(ArrayList<Item> itemList, Category cat)
-    {}
+    {
+        Scanner scan = new Scanner(System.in);
+        String cate;
+        Category c = Category.FRUITS;
+        System.out.print("Enter Category to display(FRUITS, VEGETABLES, DAIRY, BAKERY, MEAT): ");
+        cate = scan.nextLine();
+        if (cate.toUpperCase().equals(Category.FRUITS.toString()))
+        {
+            c = Category.FRUITS;
+        }
+        else if (cate.toUpperCase().equals(Category.VEGETABLES.toString()))
+        {
+            c = Category.VEGETABLES;
+        }
+        else if (cate.toUpperCase().equals(Category.DAIRY.toString()))
+        {
+            c = Category.DAIRY;
+        }
+        else if (cate.toUpperCase().equals(Category.BAKERY.toString()))
+        {
+            c = Category.BAKERY;
+        }
+        else if (cate.toUpperCase().equals(Category.MEAT.toString()))
+        {
+            c = Category.MEAT;
+        }
+        
+        System.out.println("Items in category " + c);
+        for(int j = 0; j < itemList.size(); j++) 
+        {
+            if(itemList.get(j).getCategory().equals(c))
+            {
+                Item item = itemList.get(j);
+                System.out.println(item.getName() + " (" + item.getCategory() + ") - " + item.getPrice());
+            }
+        }
+    }
     //-------------------------00ooo0oo End of file oo0ooo00------------------//
 }
