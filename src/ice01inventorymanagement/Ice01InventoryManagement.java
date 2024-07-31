@@ -86,10 +86,11 @@ public class Ice01InventoryManagement
         name = scan.nextLine();
         
         System.out.println("Enter Category(FRUITS, VEGETABLES, DAIRY, BAKERY, MEAT): ");
-        price = scan.nextDouble();
+        c = scan.nextLine();
         
         System.out.println("Enter price of the item: ");
-        c = scan.nextLine();
+        price = scan.nextDouble();
+        
         if (c.toUpperCase().equals(Category.FRUITS.toString()))
         {
             cat = Category.FRUITS;
