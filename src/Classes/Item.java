@@ -12,7 +12,7 @@ import Enums.Category;
  */
 public class Item
 {
-
+    // Create a class Item with the following fields: String name, Category category, double price
     String name;
     double price;
     Category category;

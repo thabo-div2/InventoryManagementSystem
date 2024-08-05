@@ -10,6 +10,7 @@ package Enums;
  */
 public enum Category
 {
+    // Define an enum Category with the following categories: FRUITS, VEGETABLES, DAIRY, BAKERY, MEAT.
     FRUITS, 
     VEGETABLES, 
     DAIRY, 

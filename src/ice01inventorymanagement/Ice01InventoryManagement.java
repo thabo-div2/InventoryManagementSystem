@@ -4,6 +4,7 @@
  */
 package ice01inventorymanagement;
 
+// imports
 import Classes.Item;
 import Enums.Category;
 import java.util.ArrayList;
@@ -15,7 +16,10 @@ import java.util.Scanner;
  */
 public class Ice01InventoryManagement
 {
+    // Define an arraylist
     static ArrayList<Item> itemList = new ArrayList<>();
+    
+    // intialise 5 items one for each category
     static Item item1 = new Item("Banana", 12.05, Category.FRUITS);
     static Item item2 = new Item("Carrot", 9.99, Category.VEGETABLES);
     static Item item3 = new Item("Lamb Chop", 22.55, Category.MEAT);
@@ -23,18 +27,23 @@ public class Ice01InventoryManagement
     static Item item5 = new Item("Cheese", 8.00, Category.DAIRY);
     static Category[] cats = Category.values();
     
+    //This is the main method
+    // ---------------------------------------------------------------------- //
     public static void main(String[] args)
     {
+        // use scanner object for user input
         Scanner scan = new Scanner(System.in);
-        int option = 0;
-        int EXIT = 5;
+        int option = 0; // option variable for user input
+        int EXIT = 5; // Exit the program
         
+        // Add items to the arraylist
         itemList.add(item1);
         itemList.add(item2);
         itemList.add(item3);
         itemList.add(item4);
         itemList.add(item5);
         
+        // while loop to make the program continous unless the user inputs 5 to exit
         while(option != EXIT)
         {
             System.out.println("Grocery Store Inventory Management System ");
@@ -68,9 +77,11 @@ public class Ice01InventoryManagement
         
     }
     
+    // Display all items in the inventory
     public static void displayItemList(ArrayList<Item> itemList)
     {
         System.out.println("All items in Inventory: ");
+        // loop through arraylist to display each element
         for (int i = 0; i < itemList.size(); i++)
         {
             Item item = itemList.get(i);
@@ -79,6 +90,7 @@ public class Ice01InventoryManagement
         System.out.println();
     }
     
+    // Add a new item to the inventory
     public static void addItemToList(ArrayList<Item> itemList)
     {
         Scanner scan = new Scanner(System.in);
@@ -123,6 +135,7 @@ public class Ice01InventoryManagement
         System.out.println("Item added successfully");
     }
     
+    // Remove an item from the inventory by its name
     public static void removeItemFromList(ArrayList<Item> itemList)
     {
         Scanner scan = new Scanner(System.in);
@@ -133,6 +146,7 @@ public class Ice01InventoryManagement
         System.out.println("Item removed successfully!");
     }
     
+    // Display all items in a specific category
     public static void displayCategory(ArrayList<Item> itemList, Category cat)
     {
         Scanner scan = new Scanner(System.in);
